@@ -1,4 +1,4 @@
 # Pitchers
-food ordering app
+Food ordering app
 
-view the frontend here: pitcherstakeout.000webhostapp.com
+View the frontend here: pitcherstakeout.000webhostapp.com
