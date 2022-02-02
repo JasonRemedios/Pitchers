@@ -1,2 +1,2 @@
 # Pitchers
-Food ordering web app
+Food ordering app
