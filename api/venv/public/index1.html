@@ -1,0 +1,12 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+			<script src='{{ url_for ("static", filename="script.js") }}'></script>
+
+	</head>
+	<body>
+		<h1 id='order'>order</h1>
+			<button onclick='sendTime(15)'>15 minutes</button>
+			<button onclick='sendTime(20)'>20 minutes</button>
+	</body>
+</html>
