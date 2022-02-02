@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<title>Pitcher's Take-Out and Bakery</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue" rel="stylesheet">
+<style>
+body, html {height: 100%}
+body,h1,h2,h3,h4,h5,h6 {Helvetica}
+.menu {display: none}
+.bgimg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("https://i.imgur.com/a8V416M.jpg");
+  min-height: 90%;
+  filter: brightness(1.25);
+  background-position: center;
+}
+
+.w3-tag:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.w3-tag:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.w3-btn:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#cart {
+  position: fixed;
+  bottom: 0;
+}
+
+#cartDivider {
+    margin: 5px 0;
+}
+
+
+#items {
+  /**/font-size: 25px!important;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  padding: 0px 15px;
+  border-right: 2px solid #000!important;
+  border-left: 2px solid #000!important;
+  border-top: 2px solid #000!important;
+}
+
+/*#cartBottom {
+  border-right: 2px solid #000!important;
+  border-left: 2px solid #000!important;
+}*/
+
+.w3-table td {
+  padding: 0px;
+}
+
+#h {
+  padding-top: 7px;
+}
+
+#removeFromCart {
+  padding: 0px;
+  width: inherit;
+  bottom: -6px;
+  right: -15px;
+}
+
+#minimize {
+  position: absolute;
+  padding: 0px 15px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  height: 38px;
+  right: 44px;
+  border-right: 2px solid #000!important;
+  border-left: 2px solid #000!important;
+  border-top: 2px solid #000!important;
+    
+}
+
+#max {
+    position: absolute;
+    bottom: 0px;
+    right: 44px;
+    height: 38px;
+    padding: 0px 15px;
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+    border-right: 2px solid #000!important;
+    border-left: 2px solid #000!important;
+    border-top: 2px solid #000!important;
+}
+
+#options {
+    box-sizing: border-box;
+}
+
+@media only screen and (min-width: 600px) {
+    #options {
+        width: 600px;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    #options {
+        width: 900px;
+    }
+}
+
+#checkoutBtn {
+    margin-bottom: 3px;
+    padding: 0px 16px;
+    font-size: 32px!important;
+}
+
+#checkoutForm {
+  padding: 0px;
+  font-size: 34px!important;
+}
+
+#name {
+  font-size: 24px!important;
+}
+
+#checkoutTxt {
+    font-size: 33px!important;
+}
+
+/*#total {
+    font-size: 36px!important;
+}*/
+
+#checkoutDiv {
+  text-align: center!important;
+}
+
+#wholeCheckoutForm {
+  padding: 10px;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<body>
+
+
+<!-- Navbar (sit on top) -->
+  <div id="like_button_container"></div>
+<div class="w3-top w3-hide-small">
+  <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+    <a href="#" class="w3-bar-item w3-button">HOME</a>
+    <a href="#menu" class="w3-bar-item w3-button">MENU</a>
+    <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+    <a href="#myMap" class="w3-bar-item w3-button">CONTACT</a>
+  </div>
+</div>
+  
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-bottomleft" style='padding: 8px; font-size: 20px'}}>
+    <span class="w3-tag">Open 7am to 9pm</span>
+  </div>
+  <div class="w3-display-middle w3-center">
+    <span class="w3-hide-small w3-text-red" style="font-size:100px; font-family: Bebas Neue; -webkit-text-stroke: 1px black"><span><img src='PitchersPacificoTransparent.png' style='width: 600px'><br></span>Take-Out &<br>Bakery</span>
+    <span class="w3-text-red w3-hide-large w3-hide-medium" style="font-size:54px; font-family: Bebas Neue; -webkit-text-stroke: 1px black"><span><img src='PitchersPacificoTransparent.png' style='width: 315px'><br></span>Take-Out &<br>Bakery</span>
+    <p><a href="#menu" class="w3-button w3-xxlarge w3-black">Make an order</a></p>
+  </div>
+    
+  
+ 
+</header>
+
+<!-- Menu Container 
+<div id='form'>
+        <form name='orderForm'>
+         <p>Enter Name:</p>
+         <p><input type = "text" name = "nm" /></p>
+         <p><input type = "text" name = "order" /></p>
+        
+      </form> 
+      <p><button value='order' onclick='handleOrder()' /></p>
+</div>-->
+<div id='root'></div>
+
+
+
+<!-- About Container -->
+<div class="w3-container w3-padding-64 w3-red w3-grayscale w3-xlarge" id="about">
+  <div class="w3-content">
+    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">About</h1>
+    <p>EST. 1976, located in New Harbour on route 80, we are a one stop shop; take-out, bakery, grocery store, and gas station!</p>
+    <img src="/w3images/onepage_restaurant.jpg" style="width:100%" class="w3-margin-top w3-margin-bottom" alt="Restaurant">
+    <h1><b>Opening Hours</b></h1>
+    
+    <div class="w3-row" style='font-size: 20px'>
+      <div class="w3-col s6">
+        <p>Monday<br>7:00 AM - 9:00 PM</p>
+        <p>Tuesday<br>7:00 AM - 9:00 PM</p>
+        <p>Wednesday<br>7:00 AM - 9:00 PM</p>
+        
+      </div>
+      <div class="w3-col s6">
+        <p>Thursday<br>7:00 AM - 9:00 PM</p>
+        <p>Friday<br>7:00 AM - 9:00 PM</p>
+        <p>Sat & Sun<br>8:00 AM - 10:00 PM</p>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<!-- Image of location/map -->
+
+<!-- Contact -->
+<div class="w3-container w3-padding-64 w3-blue-grey w3-grayscale-min w3-xlarge">
+  <div class="w3-content">
+    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">Contact</h1>
+    <p>Find us at 89 Main Rd, New Harbour or call us at (709) 582-2097.</p>
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="How many people" required name="People"></p>
+      <p><input class="w3-input w3-padding-16 w3-border w3-large" type="datetime-local" placeholder="Date and time" required name="date" value="2020-11-16T20:00"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
+      <p><button class="w3-button w3-light-grey w3-block" type="submit">SEND MESSAGE</button></p>
+    </form>
+  </div>
+</div>
+
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+     tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-red";
+}
+
+function handleOrder() {
+  let name = document.forms['orderForm']['nm'].value;
+  let order = document.forms['orderForm']['order'].value;
+  fetch('/placeorder/' + order + '/' + name)
+    .then(res => res.json())
+    .then(data => document.getElementById('form').innerHTML = data.accepted);
+}
+
+
+
+</script>
+
+</body>
+</html>
